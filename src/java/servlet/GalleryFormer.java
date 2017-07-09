@@ -32,10 +32,10 @@ import java.io.FilenameFilter;
                 
         for(int x = 0; x<imgList.length; x++){
             result.append("<div>");
-    result.append("<img src=\"/images/");
+    result.append("<img src='images/");
     result.append(imgList[x].getName());
-    result.append("\"");
-    result.append("/>");
+    result.append("'/>");
+ 
     result.append("</div");
     
 }

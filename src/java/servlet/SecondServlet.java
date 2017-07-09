@@ -41,11 +41,22 @@ public class SecondServlet extends HttpServlet {
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet SecondServlet</title>");       
-            out.println("<link rel=\"stylesheet\" href=\"C:\\Users\\samsung\\Documents\\NetBeansProjects\\FirstServlet\\src\\java\\servlet\\style.css\">");
+            out.println("<link rel=\"stylesheet\" href=\"css/style.css\">");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet SecondServlet at " + request.getContextPath() + "</h1>");
-            out.println("<p>" + new GalleryFormer().formGallery() +"</p>");
+            StringBuilder img = new StringBuilder("<img src=\"images/");
+            
+        if(request.getParameter("flag").equals("rus")){
+            img.append("rus.png\"");
+        } else if(request.getParameter("flag").equals("usa")){
+            img.append("usa.png\"");
+        } else {
+            img.append("world.png\"");
+        }
+         img.append("/>");
+         out.println(String.valueOf(img));
+//            out.println("<p>" + new GalleryFormer().formGallery() +"</p>");
         
             
             out.println("</body>");
